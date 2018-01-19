@@ -9,8 +9,14 @@ import com.example.android.volleyballstats.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    int currentScoreTeamA = 0;
 
+    int currentAceScoreTeamA = 0;
+    int currentKillScoreTeamA = 0;
+    int currentBlockScoreTeamA = 0;
+    int currentAceScoreTeamB = 0;
+    int currentKillScoreTeamB = 0;
+    int currentBlockScoreTeamB = 0;
+    int currentScoreTeamA = 0;
     int currentScoreTeamB = 0;
 
     @Override
@@ -30,28 +36,61 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Adds three points for team A.
+     * Displays the ACEs stats for team A
      */
-    public void addThreeForTeamA(View view) {
-        currentScoreTeamA = currentScoreTeamA + 3;
+
+    public void displayAceStatsTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_ace_stats);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Adds one Ace point for Team A in stats and adds one point to the current score.
+     */
+    public void addAceForTeamA(View view) {
+        currentAceScoreTeamA = currentAceScoreTeamA + 1;
+        currentScoreTeamA = currentAceScoreTeamA + currentKillScoreTeamA + currentBlockScoreTeamA;
         displayForTeamA(currentScoreTeamA);
+        displayAceStatsTeamA(currentAceScoreTeamA);
 
     }
 
     /**
-     * Adds two points for team A
+     * Displays the KILLs stats for team A
      */
-    public void addTwoForTeamA(View view) {
-        currentScoreTeamA = currentScoreTeamA + 2;
-        displayForTeamA(currentScoreTeamA);
+
+    public void displayKillsStatsTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_kills_stats);
+        scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * Adds one point for team A
+     * Adds one Kill point for Team A in stats and adds one point to the current score.
      */
-    public void addOneForTeamA(View view) {
-        currentScoreTeamA = currentScoreTeamA + 1;
+    public void addKillForTeamA(View view) {
+        currentKillScoreTeamA = currentKillScoreTeamA + 1;
+        currentScoreTeamA = currentAceScoreTeamA + currentKillScoreTeamA + currentBlockScoreTeamA;
         displayForTeamA(currentScoreTeamA);
+        displayKillsStatsTeamA(currentKillScoreTeamA);
+    }
+
+    /**
+     * Displays the BLOCKs stats for team A
+     */
+
+    public void displayBlocksStatsTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_blocks_stats);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Adds one BLOCK point for Team A in stats and adds one point to the current score.
+     */
+    public void addBlockForTeamA(View view) {
+        currentBlockScoreTeamA = currentBlockScoreTeamA + 1;
+        currentScoreTeamA = currentAceScoreTeamA + currentKillScoreTeamA + currentBlockScoreTeamA;
+        displayForTeamA(currentScoreTeamA);
+        displayBlocksStatsTeamA(currentBlockScoreTeamA);
     }
 
     /**
@@ -63,34 +102,82 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Adds three points for team B.
+     * Displays the ACEs stats for team B
      */
-    public void addThreeForTeamB(View view) {
-        currentScoreTeamB = currentScoreTeamB + 3;
+
+    public void displayAceStatsTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_ace_stats);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Adds one Ace point for Team B in stats and adds one point to the current score.
+     */
+    public void addAceForTeamB(View view) {
+        currentAceScoreTeamB = currentAceScoreTeamB + 1;
+        currentScoreTeamB = currentAceScoreTeamB + currentKillScoreTeamB + currentBlockScoreTeamB;
         displayForTeamB(currentScoreTeamB);
+        displayAceStatsTeamB(currentAceScoreTeamB);
 
     }
 
     /**
-     * Adds two points for team B
+     * Displays the KILLs stats for team B
      */
-    public void addTwoForTeamB(View view) {
-        currentScoreTeamB = currentScoreTeamB + 2;
-        displayForTeamB(currentScoreTeamB);
+
+    public void displayKillsStatsTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_kills_stats);
+        scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * Adds one point for team A
+     * Adds one Kill point for Team B in stats and adds one point to the current score.
      */
-    public void addOneForTeamB(View view) {
-        currentScoreTeamB = currentScoreTeamB + 1;
+    public void addKillForTeamB(View view) {
+        currentKillScoreTeamB = currentKillScoreTeamB + 1;
+        currentScoreTeamB = currentAceScoreTeamB + currentKillScoreTeamB + currentBlockScoreTeamB;
         displayForTeamB(currentScoreTeamB);
+        displayKillsStatsTeamB(currentKillScoreTeamB);
+    }
+
+    /**
+     * Displays the BLOCKs stats for team B
+     */
+
+    public void displayBlocksStatsTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_blocks_stats);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Adds one BLOCK point for Team A in stats and adds one point to the current score.
+     */
+    public void addBlockForTeamB(View view) {
+        currentBlockScoreTeamB = currentBlockScoreTeamB + 1;
+        currentScoreTeamB = currentAceScoreTeamB + currentKillScoreTeamB + currentBlockScoreTeamB;
+        displayForTeamB(currentScoreTeamB);
+        displayBlocksStatsTeamB(currentBlockScoreTeamB);
     }
 
     public void resetBothScores(View view) {
         currentScoreTeamA = 0;
         currentScoreTeamB = 0;
+        currentAceScoreTeamA = 0;
+        currentKillScoreTeamA = 0;
+        currentBlockScoreTeamA = 0;
         displayForTeamA(currentScoreTeamA);
         displayForTeamB(currentScoreTeamB);
+        displayAceStatsTeamA(currentAceScoreTeamA);
+        displayKillsStatsTeamA(currentKillScoreTeamA);
+        displayBlocksStatsTeamA(currentBlockScoreTeamA);
+        currentAceScoreTeamB = 0;
+        currentKillScoreTeamB = 0;
+        currentBlockScoreTeamB = 0;
+        displayAceStatsTeamB(currentAceScoreTeamB);
+        displayKillsStatsTeamB(currentKillScoreTeamB);
+        displayBlocksStatsTeamB(currentBlockScoreTeamB);
     }
+
+
 }
+

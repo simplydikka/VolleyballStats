@@ -6,19 +6,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/margin_16"
-    android:layout_marginEnd="@dimen/margin_8"
-    android:layout_marginLeft="@dimen/margin_8"
-    android:layout_marginRight="@dimen/margin_8"
-    android:layout_marginStart="@dimen/margin_8"
-    android:layout_marginTop="@dimen/margin_16"
+    android:layout_margin="@dimen/margin_16"
     tools:context="com.example.android.volleyballstats.MainActivity">
 
+    <ImageView
+        android:id="@+id/volleyball_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo3" />
 
     <LinearLayout
         android:id="@+id/teams"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/volleyball_logo"
+        android:layout_marginTop="@dimen/margin_8"
         android:orientation="horizontal">
 
 
@@ -30,7 +35,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/textViews"
+                style="@style/teamTextViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -40,113 +45,96 @@
 
             <TextView
                 android:id="@+id/team_a_score"
-                style="@style/scoreTextViews"
+                style="@style/scoreValueTextViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margin_24"
-                android:layout_marginTop="@dimen/margin_16"
                 android:fontFamily="sans-serif-light"
                 android:text="@string/scoreA"
                 tools:targetApi="jelly_bean" />
 
             <Button
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_24"
-                android:layout_marginLeft="@dimen/margin_16"
-                android:layout_marginRight="@dimen/margin_24"
-                android:layout_marginStart="@dimen/margin_16"
                 android:onClick="addAceForTeamA"
                 android:text="@string/ace_button" />
 
             <Button
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_24"
-                android:layout_marginLeft="@dimen/margin_16"
-                android:layout_marginRight="@dimen/margin_24"
-                android:layout_marginStart="@dimen/margin_16"
-                android:layout_marginTop="@dimen/margin_8"
                 android:onClick="addKillForTeamA"
                 android:text="@string/kill_button" />
 
             <Button
+
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_24"
-                android:layout_marginLeft="@dimen/margin_16"
-                android:layout_marginRight="@dimen/margin_24"
-                android:layout_marginStart="@dimen/margin_16"
-                android:layout_marginTop="@dimen/margin_8"
                 android:onClick="addBlockForTeamA"
                 android:text="@string/block_button" />
 
             <TextView
-                style="@style/textViews"
+                style="@style/statsTextViews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_8"
-                android:layout_marginRight="@dimen/margin_8"
-                android:layout_marginTop="@dimen/margin_16"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-
-                android:text="Stats"
+                android:text="@string/stats_text_view"
                 tools:targetApi="jelly_bean" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8"
                 android:layout_marginRight="@dimen/margin_8"
                 android:layout_marginTop="@dimen/margin_8"
-
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/textViews"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
-                    android:text="ACEs:"
-                    tools:targetApi="jelly_bean"
+                    android:text="@string/aces_stats"
+                    tools:targetApi="jelly_bean" />
 
                 <TextView
-                    style="@style/textViews"
+                    android:id="@+id/team_a_ace_stats"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="0"
-                    tools:targetApi="jelly_bean"
+                    android:text="@string/aces_stats_initial_value"
+                    tools:targetApi="jelly_bean" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8"
                 android:layout_marginRight="@dimen/margin_8"
-
                 android:layout_marginTop="@dimen/margin_8"
-
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/textViews"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
-                    android:text="KILLs:"
+                    android:text="@string/kills_stats"
                     tools:targetApi="jelly_bean" />
 
                 <TextView
-                    style="@style/textViews"
+                    android:id="@+id/team_a_kills_stats"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="0"
+                    android:text="@string/kills_initial_value"
                     tools:targetApi="jelly_bean" />
             </LinearLayout>
 
@@ -155,25 +143,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_8"
                 android:layout_marginRight="@dimen/margin_8"
-
                 android:layout_marginTop="@dimen/margin_8"
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/textViews"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
-                    android:text="BLOCKs:"
+                    android:text="@string/blocks_stats"
                     tools:targetApi="jelly_bean" />
 
                 <TextView
-                    style="@style/textViews"
+                    android:id="@+id/team_a_blocks_stats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="0"
+                    android:text="@string/blocks_stats_initial_value"
                     tools:targetApi="jelly_bean" />
             </LinearLayout>
 
@@ -182,6 +169,8 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_16"
             android:background="@android:color/darker_gray" />
 
         <LinearLayout
@@ -192,7 +181,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/textViews"
+                style="@style/teamTextViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -202,60 +191,42 @@
 
             <TextView
                 android:id="@+id/team_b_score"
-                style="@style/scoreTextViews"
+                style="@style/scoreValueTextViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margin_24"
-                android:layout_marginTop="@dimen/margin_16"
                 android:fontFamily="sans-serif-light"
                 android:text="@string/scoreB"
                 tools:targetApi="jelly_bean" />
 
             <Button
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:layout_marginLeft="@dimen/margin_24"
-                android:layout_marginRight="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_24"
                 android:onClick="addAceForTeamB"
                 android:text="@string/ace_button" />
 
             <Button
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:layout_marginLeft="@dimen/margin_24"
-                android:layout_marginRight="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_24"
-                android:layout_marginTop="@dimen/margin_8"
                 android:onClick="addKillForTeamB"
                 android:text="@string/kill_button" />
 
             <Button
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:layout_marginLeft="@dimen/margin_24"
-                android:layout_marginRight="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_24"
-                android:layout_marginTop="@dimen/margin_8"
-
                 android:onClick="addBlockForTeamB"
                 android:text="@string/block_button" />
 
+
             <TextView
-                style="@style/textViews"
+                style="@style/statsTextViews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_8"
-                android:layout_marginStart="@dimen/margin_8"
-                android:layout_marginTop="@dimen/margin_16"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-
-                android:text="Stats"
+                android:text="@string/stats_text_view"
                 tools:targetApi="jelly_bean" />
 
 
@@ -264,27 +235,52 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_8"
                 android:layout_marginStart="@dimen/margin_8"
-
                 android:layout_marginTop="@dimen/margin_8"
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/textViews"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
-                    android:text="ACEs:"
-                    tools:targetApi="jelly_bean"
+                    android:text="@string/aces_stats"
+                    tools:targetApi="jelly_bean" />
 
                 <TextView
-                    style="@style/textViews"
+                    android:id="@+id/team_b_ace_stats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="0"
-                    tools:targetApi="jelly_bean"
+                    android:text="@string/aces_stats_initial_value"
+                    tools:targetApi="jelly_bean" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/kills_stats"
+                    tools:targetApi="jelly_bean" />
+
+                <TextView
+
+                    android:id="@+id/team_b_kills_stats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/kills_initial_value"
+                    tools:targetApi="jelly_bean" />
             </LinearLayout>
 
             <LinearLayout
@@ -298,48 +294,19 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/textViews"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
-                    android:text="KILLs:"
+                    android:text="@string/blocks_stats"
                     tools:targetApi="jelly_bean" />
 
                 <TextView
-                    style="@style/textViews"
+                    android:id="@+id/team_b_blocks_stats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="0"
-                    tools:targetApi="jelly_bean" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_8"
-
-                android:layout_marginStart="@dimen/margin_8"
-                android:layout_marginTop="@dimen/margin_8"
-
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/textViews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="BLOCKs:"
-                    tools:targetApi="jelly_bean" />
-
-                <TextView
-                    style="@style/textViews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="0"
+                    android:text="@string/blocks_stats_initial_value"
                     tools:targetApi="jelly_bean" />
             </LinearLayout>
 
@@ -350,17 +317,17 @@
 
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_below="@id/teams"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/margin_32">
 
         <Button
+            style="@style/resetButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:onClick="resetBothScores"
             android:text="@string/reset" />
 

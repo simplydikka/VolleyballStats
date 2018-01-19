@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Court Counter</string>
+
     <string name="team_a">Team A</string>
     <string name="team_b">Team B</string>
     <string name="scoreA">0</string>
@@ -11,4 +11,13 @@
     <string name="ace_button">ace</string>
     <string name="kill_button">kill</string>
     <string name="block_button">block</string>
+    <string name="send_stats_button">Send Stats</string>
+    <string name="blocks_stats_initial_value">0</string>
+    <string name="blocks_stats">BLOCKs:</string>
+    <string name="kills_initial_value">0</string>
+    <string name="kills_stats">KILLs:</string>
+    <string name="aces_stats_initial_value">0</string>
+    <string name="aces_stats">ACEs:</string>
+    <string name="stats_text_view">Stats</string>
+    <string name="app_name">Volleyball Stats</string>
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="VolleyballTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_material_light_1</item>
+        <item name="android:navigationBarColor">@color/primary_material_light_1</item>
+        <item name="android:colorForeground">@color/primary_dark_material_blue</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:statusBarColor">@color/primary_dark_material_blue</item>
+        <item name="colorAccent">@color/accent_material_yellow</item>
+        <item name="colorPrimaryDark">@color/primary_dark_material_blue</item>
+    </style>
+</resources>
