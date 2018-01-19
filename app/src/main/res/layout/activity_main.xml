@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/margin_16"
+    android:layout_marginEnd="@dimen/margin_8"
+    android:layout_marginLeft="@dimen/margin_8"
+    android:layout_marginRight="@dimen/margin_8"
+    android:layout_marginStart="@dimen/margin_8"
+    android:layout_marginTop="@dimen/margin_16"
+    tools:context="com.example.android.volleyballstats.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/teams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/TeamASide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/team_a"
+                tools:targetApi="jelly_bean" />
+
+            <TextView
+                android:id="@+id/team_a_score"
+                style="@style/scoreTextViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_16"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/scoreA"
+                tools:targetApi="jelly_bean" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_24"
+                android:layout_marginStart="@dimen/margin_16"
+                android:onClick="addAceForTeamA"
+                android:text="@string/ace_button" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_24"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:onClick="addKillForTeamA"
+                android:text="@string/kill_button" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_24"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:onClick="addBlockForTeamA"
+                android:text="@string/block_button" />
+
+            <TextView
+                style="@style/textViews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_16"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+
+                android:text="Stats"
+                tools:targetApi="jelly_bean" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="ACEs:"
+                    tools:targetApi="jelly_bean"
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0"
+                    tools:targetApi="jelly_bean"
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_8"
+
+                android:layout_marginTop="@dimen/margin_8"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="KILLs:"
+                    tools:targetApi="jelly_bean" />
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+
+                android:layout_marginTop="@dimen/margin_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="BLOCKs:"
+                    tools:targetApi="jelly_bean" />
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:id="@+id/TeamBSide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/team_b"
+                tools:targetApi="jelly_bean" />
+
+            <TextView
+                android:id="@+id/team_b_score"
+                style="@style/scoreTextViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_16"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/scoreB"
+                tools:targetApi="jelly_bean" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginLeft="@dimen/margin_24"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginStart="@dimen/margin_24"
+                android:onClick="addAceForTeamB"
+                android:text="@string/ace_button" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginLeft="@dimen/margin_24"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_8"
+                android:onClick="addKillForTeamB"
+                android:text="@string/kill_button" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginLeft="@dimen/margin_24"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_8"
+
+                android:onClick="addBlockForTeamB"
+                android:text="@string/block_button" />
+
+            <TextView
+                style="@style/textViews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_16"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+
+                android:text="Stats"
+                tools:targetApi="jelly_bean" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginStart="@dimen/margin_8"
+
+                android:layout_marginTop="@dimen/margin_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="ACEs:"
+                    tools:targetApi="jelly_bean"
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0"
+                    tools:targetApi="jelly_bean"
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="KILLs:"
+                    tools:targetApi="jelly_bean" />
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="BLOCKs:"
+                    tools:targetApi="jelly_bean" />
+
+                <TextView
+                    style="@style/textViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0"
+                    tools:targetApi="jelly_bean" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/teams"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="resetBothScores"
+            android:text="@string/reset" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
