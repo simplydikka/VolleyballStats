@@ -12,9 +12,7 @@
     </style>
 
     <style name="statsTextViews" parent="teamTextViews">
-
         <item name="android:layout_marginTop">@dimen/margin_16</item>
-        <item name="android:layout_marginRight">@dimen/margin_8</item>
 
 
     </style>

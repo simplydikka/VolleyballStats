@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Adds one BLOCK point for Team A in stats and adds one point to the current score.
+     * Adds one BLOCK point for Team B in stats and adds one point to the current score.
      */
     public void addBlockForTeamB(View view) {
         currentBlockScoreTeamB = currentBlockScoreTeamB + 1;
@@ -159,6 +159,11 @@ public class MainActivity extends AppCompatActivity {
         displayBlocksStatsTeamB(currentBlockScoreTeamB);
     }
 
+    /**
+     * Resets all scores for both themes
+     *
+     * @param view
+     */
     public void resetBothScores(View view) {
         currentScoreTeamA = 0;
         currentScoreTeamB = 0;
